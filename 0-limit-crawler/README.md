@@ -31,3 +31,26 @@ Incorrect solution:
 		exit status 1
 		FAIL    github.com/loong/go-concurrency-exercises/0-limit-crawler  7.808s
 ```
+
+## Solution
+
+- Add ticker to limit the crawl time interval
+
+```bash
+$ go test
+found: http://golang.org/ "The Go Programming Language"
+not found: http://golang.org/cmd/
+found: http://golang.org/pkg/ "Packages"
+found: http://golang.org/pkg/os/ "Package os"
+found: http://golang.org/ "The Go Programming Language"
+not found: http://golang.org/cmd/
+found: http://golang.org/pkg/fmt/ "Package fmt"
+found: http://golang.org/pkg/ "Packages"
+found: http://golang.org/ "The Go Programming Language"
+not found: http://golang.org/cmd/
+found: http://golang.org/pkg/ "Packages"
+found: http://golang.org/pkg/ "Packages"
+found: http://golang.org/ "The Go Programming Language"
+PASS
+ok      github.com/loong/go-concurrency-exercises/0-limit-crawler       13.004s
+```

@@ -24,3 +24,19 @@ Use the following commands to test your solution:
 go test
 go test --race
 ```
+
+## Solution
+
+- use mutex, goroutine and ticker to implement the session cleaner
+
+```bash
+$ go test -v
+=== RUN   TestSessionManagersCreationAndUpdate
+--- PASS: TestSessionManagersCreationAndUpdate (0.00s)
+=== RUN   TestSessionManagersCleaner
+--- PASS: TestSessionManagersCleaner (7.00s)
+=== RUN   TestSessionManagersCleanerAfterUpdate
+--- PASS: TestSessionManagersCleanerAfterUpdate (10.00s)
+PASS
+ok      github.com/loong/go-concurrency-exercises/5-session-cleaner     17.004s
+```

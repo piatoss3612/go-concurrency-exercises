@@ -7,3 +7,13 @@ Change the program to do the following:
    1. On SIGINT try to gracefully stop the process using
           `proc.Stop()`
    2. If SIGINT is called again, just kill the program (last resort)
+
+## Solution
+
+- Use a channel to receive the SIGINT signal
+
+```bash
+$ go run .
+Process running...^C
+Stopping process....^CKilling process
+```

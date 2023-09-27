@@ -47,3 +47,17 @@ Found 3 data race(s)
 
 * [https://www.mailgun.com/blog/golangs-superior-cache-solution-memcached-redis/](https://www.mailgun.com/blog/golangs-superior-cache-solution-memcached-redis/)
 * [https://allegro.tech/2016/03/writing-fast-cache-service-in-go.html](https://allegro.tech/2016/03/writing-fast-cache-service-in-go.html)
+
+## Solution
+
+- Add mutex to the cache struct
+
+```bash
+$ go test -v
+=== RUN   TestMain
+--- PASS: TestMain (2.04s)
+=== RUN   TestLRU
+--- PASS: TestLRU (2.07s)
+PASS
+ok      github.com/loong/go-concurrency-exercises/2-race-in-cache       4.113s
+```

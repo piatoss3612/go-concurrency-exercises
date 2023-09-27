@@ -22,3 +22,17 @@ beertocode      tweets about golang
 vampirewalk666  tweets about golang
 Process took 1.977756255s
 ```
+
+## Solution
+
+- Use channel to communicate between producer and consumer
+
+```bash
+$ go run .
+davecheney      tweets about golang
+beertocode      does not tweet about golang
+ironzeb         tweets about golang
+beertocode      tweets about golang
+vampirewalk666  tweets about golang
+Process took 1.973530152s
+```

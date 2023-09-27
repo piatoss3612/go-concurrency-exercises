@@ -7,3 +7,20 @@ service will kill your process, unless you are a paid premium user.
 Beginner Level: 10s max per request
 Advanced Level: 10s max per user (accumulated)
 
+## Solution
+
+- use channel, goroutine, select, atomic to implement a time limiter
+
+```bash
+$ go run .
+UserID: 0       Process 1 started.
+UserID: 1       Process 2 started.
+UserID: 0       Process 3 started.
+UserID: 1       Process 5 started.
+UserID: 0       Process 4 started.
+UserID: 0       Process 1 done.
+UserID: 0       Process 3 killed. (No quota left)
+UserID: 0       Process 4 killed. (No quota left)
+UserID: 1       Process 5 done.
+UserID: 1       Process 2 done.
+```
